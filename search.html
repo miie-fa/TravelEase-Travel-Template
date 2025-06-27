@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | TravelEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="backdrop-blur-lg bg-white/70 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">TravelEase</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition">Home</a>
+                    <a href="#" class="text-indigo-600 font-medium">Flights</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition">Hotels</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition">Packages</a>
+                    <a href="help.html" class="text-gray-600 hover:text-indigo-600 transition">Help</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="profile.html" class="hidden md:block px-4 py-2 text-gray-600 hover:text-indigo-600 transition">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button class="md:hidden focus:outline-none">
+                        <i class="fas fa-bars text-gray-600 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Filters -->
+    <section class="py-6 bg-white shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="backdrop-blur-md bg-white/70 rounded-xl shadow-sm p-4">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="w-full md:w-auto mb-4 md:mb-0">
+                        <h3 class="text-lg font-medium text-gray-800">Search Filters</h3>
+                    </div>
+                    <div class="w-full md:w-auto flex items-center space-x-4">
+                        <div class="relative w-full md:w-64">
+                            <input type="text" placeholder="Search destinations..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                            Filter <i class="fas fa-sliders-h ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Departure</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            <option>Any Time</option>
+                            <option>Morning (6am-12pm)</option>
+                            <option>Afternoon (12pm-6pm)</option>
+                            <option>Evening (6pm-12am)</option>
+                            <option>Night (12am-6am)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Airlines</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            <option>All Airlines</option>
+                            <option>Delta</option>
+                            <option>United</option>
+                            <option>American</option>
+                            <option>Southwest</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Price Range</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            <option>Any Price</option>
+                            <option>Under $200</option>
+                            <option>$200 - $500</option>
+                            <option>$500 - $1000</option>
+                            <option>Over $1000</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Stops</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            <option>Any Stops</option>
+                            <option>Non-stop</option>
+                            <option>1 Stop</option>
+                            <option>2+ Stops</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <!-- Sidebar Filters -->
+                <div class="w-full md:w-1/4 lg:w-1/5 pr-0 md:pr-6 mb-6 md:mb-0">
+                    <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-4 sticky top-24">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Refine Your Search</h3>
+                        
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-700 mb-2">Price Range</h4>
+                            <input type="range" min="0" max="5000" value="2500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between mt-2">
+                                <span class="text-sm text-gray-600">$0</span>
+                                <span class="text-sm text-gray-600">$5000</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Airlines -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-700 mb-2">Airlines</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="airline1" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="airline1" class="ml-2 text-sm text-gray-700">Delta Airlines</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="airline2" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="airline2" class="ml-2 text-sm text-gray-700">United Airlines</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="airline3" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="airline3" class="ml-2 text-sm text-gray-700">American Airlines</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="airline4" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="airline4" class="ml-2 text-sm text-gray-700">Southwest</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Departure Time -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-700 mb-2">Departure Time</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="time1" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="time1" class="ml-2 text-sm text-gray-700">Morning (6am-12pm)</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="time2" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="time2" class="ml-2 text-sm text-gray-700">Afternoon (12pm-6pm)</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="time3" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="time3" class="ml-2 text-sm text-gray-700">Evening (6pm-12am)</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="time4" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="time4" class="ml-2 text-sm text-gray-700">Night (12am-6am)</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stops -->
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Stops</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="stops0" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="stops0" class="ml-2 text-sm text-gray-700">Non-stop</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="stops1" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="stops1" class="ml-2 text-sm text-gray-700">1 Stop</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="stops2" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="stops2" class="ml-2 text-sm text-gray-700">2+ Stops</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Results -->
+                <div class="w-full md:w-3/4 lg:w-4/5">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-medium text-gray-800">Flights from New York to Paris</h3>
+                        <div class="flex items-center">
+                            <span class="text-sm text-gray-600 mr-2">Sort by:</span>
+                            <select class="text-sm border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                                <option>Best Match</option>
+                                <option>Price (Low to High)</option>
+                                <option>Price (High to Low)</option>
+                                <option>Duration (Shortest)</option>
+                                <option>Departure (Earliest)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Flight Cards -->
+                    <div class="space-y-4">
+                        <!-- Flight 1 -->
+                        <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="p-4">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex items-center mb-4 md:mb-0">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 rounded-lg mr-4">
+                                            <img src="https://via.placeholder.com/40x40" alt="Delta" class="w-8 h-8">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Delta Airlines</h4>
+                                            <p class="text-sm text-gray-500">DL 1234 • Boeing 737</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">07:00</div>
+                                        <div class="text-xs text-gray-500">JFK, New York</div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xs text-gray-500">Non-stop • 7h 15m</div>
+                                        <div class="w-24 h-px bg-gray-300 mx-auto my-2"></div>
+                                        <div class="text-xs text-gray-500 flex items-center justify-center">
+                                            <i class="fas fa-plane text-gray-400 mr-1"></i>
+                                            <span>Direct</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">19:15</div>
+                                        <div class="text-xs text-gray-500">CDG, Paris</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-indigo-600">$649</div>
+                                        <a href="product.html" class="text-sm text-indigo-600 hover:text-indigo-800">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-suitcase text-gray-500 mr-2"></i>
+                                    <span class="text-sm text-gray-600">1 checked bag included</span>
+                                </div>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                                    Select <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flight 2 -->
+                        <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="p-4">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex items-center mb-4 md:mb-0">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 rounded-lg mr-4">
+                                            <img src="https://via.placeholder.com/40x40" alt="American" class="w-8 h-8">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">American Airlines</h4>
+                                            <p class="text-sm text-gray-500">AA 5678 • Airbus A330</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">09:30</div>
+                                        <div class="text-xs text-gray-500">JFK, New York</div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xs text-gray-500">1 Stop • 9h 45m</div>
+                                        <div class="w-24 h-px bg-gray-300 mx-auto my-2"></div>
+                                        <div class="text-xs text-gray-500 flex items-center justify-center">
+                                            <i class="fas fa-plane text-gray-400 mr-1"></i>
+                                            <span>LHR, London</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">21:15</div>
+                                        <div class="text-xs text-gray-500">CDG, Paris</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-indigo-600">$589</div>
+                                        <a href="product.html" class="text-sm text-indigo-600 hover:text-indigo-800">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-suitcase text-gray-500 mr-2"></i>
+                                    <span class="text-sm text-gray-600">1 checked bag included</span>
+                                </div>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                                    Select <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flight 3 -->
+                        <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="p-4">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex items-center mb-4 md:mb-0">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 rounded-lg mr-4">
+                                            <img src="https://via.placeholder.com/40x40" alt="United" class="w-8 h-8">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">United Airlines</h4>
+                                            <p class="text-sm text-gray-500">UA 9012 • Boeing 787</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">14:15</div>
+                                        <div class="text-xs text-gray-500">JFK, New York</div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xs text-gray-500">Non-stop • 7h 30m</div>
+                                        <div class="w-24 h-px bg-gray-300 mx-auto my-2"></div>
+                                        <div class="text-xs text-gray-500 flex items-center justify-center">
+                                            <i class="fas fa-plane text-gray-400 mr-1"></i>
+                                            <span>Direct</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">02:45</div>
+                                        <div class="text-xs text-gray-500">CDG, Paris</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-indigo-600">$699</div>
+                                        <a href="product.html" class="text-sm text-indigo-600 hover:text-indigo-800">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-suitcase text-gray-500 mr-2"></i>
+                                    <span class="text-sm text-gray-600">1 checked bag included</span>
+                                </div>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                                    Select <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flight 4 -->
+                        <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="p-4">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                    <div class="flex items-center mb-4 md:mb-0">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 rounded-lg mr-4">
+                                            <img src="https://via.placeholder.com/40x40" alt="Air France" class="w-8 h-8">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Air France</h4>
+                                            <p class="text-sm text-gray-500">AF 3456 • Airbus A350</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">18:45</div>
+                                        <div class="text-xs text-gray-500">JFK, New York</div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xs text-gray-500">1 Stop • 10h 15m</div>
+                                        <div class="w-24 h-px bg-gray-300 mx-auto my-2"></div>
+                                        <div class="text-xs text-gray-500 flex items-center justify-center">
+                                            <i class="fas fa-plane text-gray-400 mr-1"></i>
+                                            <span>AMS, Amsterdam</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 md:mb-0">
+                                        <div class="text-xl font-medium text-gray-800">09:00</div>
+                                        <div class="text-xs text-gray-500">CDG, Paris</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-indigo-600">$549</div>
+                                        <a href="product.html" class="text-sm text-indigo-600 hover:text-indigo-800">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-suitcase text-gray-500 mr-2"></i>
+                                    <span class="text-sm text-gray-600">1 checked bag included</span>
+                                </div>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                                    Select <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="mt-8 flex justify-center">
+                        <nav class="inline-flex rounded-md shadow-sm">
+                            <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-indigo-600 hover:bg-gray-50">1</a>
+                            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">2</a>
+                            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">3</a>
+                            <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">4</a>
+                            <a href="#" class="px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (For Hotels) -->
+    <section class="py-8 bg-gray-100 hidden">
+        <div class="container mx-auto px-6">
+            <h3 class="text-xl font-medium text-gray-800 mb-4">Hotels on Map</h3>
+            <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden" style="height: 400px;">
+                <!-- Map placeholder -->
+                <div class="w-full h-full flex items-center justify-center bg-gray-200">
+                    <i class="fas fa-map-marked-alt text-4xl text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">TravelEase</h3>
+                    <p class="text-gray-400">Making travel planning effortless and enjoyable since 2015. Your perfect travel companion.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Flights</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Hotels</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Packages</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Travel Street, Suite 456, San Francisco, CA 94107</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@travelease.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 TravelEase. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <img src="https://via.placeholder.com/40x25" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Amex" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | TravelEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="backdrop-blur-lg bg-white/70 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">TravelEase</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition">Home</a>
+                    <a href="search.html" class="text-gray-600 hover:text-indigo-600 transition">Flights</a>
+                    <a href="search.html" class="text-gray-600 hover:text-indigo-600 transition">Hotels</a>
+                    <a href="search.html" class="text-gray-600 hover:text-indigo-600 transition">Packages</a>
+                    <a href="help.html" class="text-gray-600 hover:text-indigo-600 transition">Help</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:block px-4 py-2 text-indigo-600 font-medium">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button class="md:hidden focus:outline-none">
+                        <i class="fas fa-bars text-gray-600 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Content -->
+    <section class="py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar -->
+                <div class="w-full lg:w-1/4">
+                    <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 sticky top-24">
+                        <!-- User Profile -->
+                        <div class="flex flex-col items-center text-center mb-6">
+                            <div class="w-20 h-20 rounded-full overflow-hidden mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Sarah Johnson</h3>
+                            <p class="text-sm text-gray-500">Member since 2021</p>
+                        </div>
+                        
+                        <!-- Navigation -->
+                        <nav class="space-y-2">
+                            <a href="#" class="block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg font-medium">
+                                <i class="fas fa-user-circle mr-2"></i> My Profile
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-suitcase mr-2"></i> My Bookings
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-heart mr-2"></i> Wishlist
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-cog mr-2"></i> Settings
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-question-circle mr-2"></i> Help
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="w-full lg:w-3/4">
+                    <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">My Profile</h2>
+                        
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                    <input type="text" value="Sarah" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                    <input type="text" value="Johnson" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" value="sarah.johnson@example.com" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" value="+1 (555) 123-4567" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                                    <input type="date" value="1985-06-15" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                                    <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                        <option>Female</option>
+                                        <option>Male</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                                <input type="text" value="123 Main Street" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 mb-2">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div>
+                                        <input type="text" value="San Francisco" placeholder="City" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                            <option>California</option>
+                                            <option>New York</option>
+                                            <option>Texas</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <input type="text" value="94107" placeholder="ZIP Code" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Change Password -->
+                    <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 mb-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Change Password</h3>
+                        
+                        <form>
+                            <div class="space-y-4 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Current Password</label>
+                                    <input type="password" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">New Password</label>
+                                    <input type="password" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
+                                    <input type="password" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition">
+                                    Update Password
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Recent Bookings -->
+                    <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Recent Bookings</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booking ID</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Trip</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#TE-987654</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">New York to Paris</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jun 15, 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Confirmed</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$1,522</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#TE-876543</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">San Francisco to Tokyo</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 22, 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$1,845</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#TE-765432</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Los Angeles to London</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 10, 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$1,327</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="mt-4 text-right">
+                            <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">
+                                View All Bookings <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">TravelEase</h3>
+                    <p class="text-gray-400">Making travel planning effortless and enjoyable since 2015. Your perfect travel companion.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-white transition">Flights</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-white transition">Hotels</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-white transition">Packages</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="help.html" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Travel Street, Suite 456, San Francisco, CA 94107</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@travelease.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 TravelEase. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <img src="https://via.placeholder.com/40x25" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Amex" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

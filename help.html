@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | TravelEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="backdrop-blur-lg bg-white/70 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">TravelEase</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition">Home</a>
+                    <a href="search.html" class="text-gray-600 hover:text-indigo-600 transition">Flights</a>
+                    <a href="search.html" class="text-gray-600 hover:text-indigo-600 transition">Hotels</a>
+                    <a href="search.html" class="text-gray-600 hover:text-indigo-600 transition">Packages</a>
+                    <a href="#" class="text-indigo-600 font-medium">Help</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="profile.html" class="hidden md:block px-4 py-2 text-gray-600 hover:text-indigo-600 transition">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button class="md:hidden focus:outline-none">
+                        <i class="fas fa-bars text-gray-600 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Help Center -->
+    <section class="py-12 bg-indigo-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">How can we help you?</h1>
+            <p class="text-xl text-indigo-100 max-w-3xl mx-auto mb-8">Find answers to common questions or contact our customer support team.</p>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Search help articles..." class="w-full px-6 py-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                    <button class="absolute right-3 top-3 bg-indigo-600 text-white p-2 rounded-lg">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Categories -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-plane text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Flights</h3>
+                    <p class="text-gray-600 mb-4">Find answers about booking, changes, cancellations, baggage, and more.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Browse Articles <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-hotel text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Hotels</h3>
+                    <p class="text-gray-600 mb-4">Learn about reservations, modifications, cancellations, and hotel policies.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Browse Articles <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-suitcase text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Packages</h3>
+                    <p class="text-gray-600 mb-4">Get information about vacation packages, tours, and activities.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Browse Articles <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Questions -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Quick answers to common questions about travel with TravelEase</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden">
+                    <!-- FAQ Item 1 -->
+                    <div class="border-b border-gray-200">
+                        <button class="flex items-center justify-between w-full text-left p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-medium text-gray-800">How do I change or cancel my flight booking?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 ml-4 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-gray-600 hidden">
+                            <p>You can change or cancel your flight booking by logging into your TravelEase account and accessing the "My Bookings" section. From there, select the booking you wish to modify and follow the prompts. Please note that change and cancellation fees may apply depending on the airline's policy and fare rules.</p>
+                            <p class="mt-2">If you need assistance, our customer service team is available 24/7 to help you with changes or cancellations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="border-b border-gray-200">
+                        <button class="flex items-center justify-between w-full text-left p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-medium text-gray-800">What is your refund policy?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 ml-4 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-gray-600 hidden">
+                            <p>Our refund policy depends on the type of booking and the specific terms of your fare:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Refundable fares: Full refund minus any applicable fees</li>
+                                <li>Non-refundable fares: No refund, but you may receive a credit for future travel (minus fees)</li>
+                                <li>Hotel bookings: Varies by property (check cancellation policy at time of booking)</li>
+                                <li>Packages: Typically refundable up to a certain date before travel</li>
+                            </ul>
+                            <p class="mt-2">Refunds are processed within 7-10 business days to the original form of payment.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="border-b border-gray-200">
+                        <button class="flex items-center justify-between w-full text-left p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-medium text-gray-800">How do I add baggage to my booking?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 ml-4 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-gray-600 hidden">
+                            <p>You can add baggage to your flight booking by:</p>
+                            <ol class="list-decimal pl-5 mt-2 space-y-1">
+                                <li>Logging into your TravelEase account</li>
+                                <li>Going to "My Bookings" and selecting your flight</li>
+                                <li>Clicking on "Add Baggage" or "Manage Booking"</li>
+                                <li>Selecting the baggage options you need</li>
+                                <li>Completing the payment process</li>
+                            </ol>
+                            <p class="mt-2">You can also add baggage at the airport, but it's usually more expensive than purchasing in advance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="border-b border-gray-200">
+                        <button class="flex items-center justify-between w-full text-left p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-medium text-gray-800">How do I contact customer service?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 ml-4 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-gray-600 hidden">
+                            <p>Our customer service team is available 24/7 to assist you with any questions or issues:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Phone: +1 (555) 123-4567</li>
+                                <li>Email: support@travelease.com</li>
+                                <li>Live Chat: Available on our website and mobile app</li>
+                                <li>Social Media: @TravelEase on Twitter, Facebook, and Instagram</li>
+                            </ul>
+                            <p class="mt-2">For faster service, have your booking reference number ready when contacting us.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div>
+                        <button class="flex items-center justify-between w-full text-left p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-medium text-gray-800">What payment methods do you accept?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 ml-4 transition-transform duration-300"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-gray-600 hidden">
+                            <p>We accept the following payment methods:</p>
+                            <div class="grid grid-cols-2 gap-4 mt-4">
+                                <div class="flex items-center">
+                                    <i class="fab fa-cc-visa text-3xl text-gray-600 mr-3"></i>
+                                    <span>Visa</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fab fa-cc-mastercard text-3xl text-gray-600 mr-3"></i>
+                                    <span>Mastercard</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fab fa-cc-amex text-3xl text-gray-600 mr-3"></i>
+                                    <span>American Express</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fab fa-cc-paypal text-3xl text-gray-600 mr-3"></i>
+                                    <span>PayPal</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-university text-3xl text-gray-600 mr-3"></i>
+                                    <span>Bank Transfer</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-wallet text-3xl text-gray-600 mr-3"></i>
+                                    <span>Apple Pay/Google Pay</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">
+                        View All FAQs <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto backdrop-blur-sm bg-white/70 rounded-xl shadow-sm overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12 bg-indigo-600 text-white">
+                        <h2 class="text-2xl font-bold mb-4">Contact Our Team</h2>
+                        <p class="mb-6">Have a question that's not answered in our help center? Our customer support team is ready to assist you.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-medium">Phone Support</h3>
+                                    <p>+1 (555) 123-4567</p>
+                                    <p class="text-sm text-indigo-200">24 hours a day, 7 days a week</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-medium">Email Us</h3>
+                                    <p>support@travelease.com</p>
+                                    <p class="text-sm text-indigo-200">Typically respond within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-comment-alt mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-medium">Live Chat</h3>
+                                    <p>Available on our website and app</p>
+                                    <p class="text-sm text-indigo-200">8am-10pm EST, 7 days a week</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Send Us a Message</h2>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                    <option>Booking Question</option>
+                                    <option>Change/Cancellation</option>
+                                    <option>Refund Request</option>
+                                    <option>Technical Issue</option>
+                                    <option>Feedback</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Policies & Information</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Important information about your travel with TravelEase</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-file-contract text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-800 mb-2">Terms & Conditions</h3>
+                    <p class="text-gray-600 mb-4">Read our terms of service and booking conditions.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View Terms</a>
+                </div>
+                
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-shield text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-800 mb-2">Privacy Policy</h3>
+                    <p class="text-gray-600 mb-4">Learn how we protect and use your personal information.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View Policy</a>
+                </div>
+                
+                <div class="backdrop-blur-sm bg-white/70 rounded-xl shadow-sm p-6 text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cookie-bite text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-800 mb-2">Cookie Policy</h3>
+                    <p class="text-gray-600 mb-4">Information about how we use cookies on our website.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View Policy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">TravelEase</h3>
+                    <p class="text-gray-400">Making travel planning effortless and enjoyable since 2015. Your perfect travel companion.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-white transition">Flights</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-white transition">Hotels</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-white transition">Packages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Travel Street, Suite 456, San Francisco, CA 94107</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@travelease.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 TravelEase. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <img src="https://via.placeholder.com/40x25" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Amex" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
